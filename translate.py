@@ -113,3 +113,5 @@ if __name__ == "__main__":
     if result != '' and args.o != None:
         with open(args.o, 'w') as f:
             f.write(result)
+
+        print(f'results saved in file {args.o}')
