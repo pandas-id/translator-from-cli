@@ -1,24 +1,24 @@
-# Apa ini?
+# What's this?
 
-Ini adalah sebuah program sederhana yang berguna untuk menerjemahkan
-sebuah kata,kalimat ataupun text yang ada pada sebuah file
-dengan hasil yang instan.
+This is a simple program that is useful for translating
+a word, sentence or text that is in a file
+with instant results.
 
-# Pemasangan
+# Installation
 
-```bash
-# Cloning repo ini
+``` bash
+# Cloning this repo
 git clone https://github.com/pandas-id/translator-from-cli
 
-# perintah selanjutnya option, berguna jika Anda ingin mengakses program dari directory manapun  
-# masuk ke folder translator-from-cli
+# next command option, useful if you want to access the program from any directory
+# go to translator-from-cli folder
 cd translator-from-cli
-# beri hak akses
+# grant access rights
 chmod +x translator.py
-# pindahkan file translator.py ke folder bin, path ke folder bin bisa saja berbeda
+# move the translator.py file to the bin folder, the path to the bin folder may be different
 cp translator.py $PREFIX/bin
 ```
 
-# Cara pakai
+# How to use
 
-Gunakan perintah `python translator.py -h` atau `translator.py -h` untuk info lebih lanjut.
+Use the command `python translator.py -h` or `translator.py -h` for more info.
