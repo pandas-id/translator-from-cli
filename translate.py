@@ -63,12 +63,12 @@ if __name__ == "__main__":
     parser.add_argument(
             '-sl',
             type=str,
-            help='from language',
+            help="from language [default 'id']",
             default='id')
     parser.add_argument(
             '-tl',
             type=str,
-            help='to language',
+            help="to language [default 'en']",
             default='en')
     parser.add_argument(
             '-f',
@@ -78,8 +78,12 @@ if __name__ == "__main__":
     parser.add_argument(
             '-tx',
             type=str,
-            help='txt to be translated',
+            help='text to be translated',
             nargs='*')
+    parser.add_argument(
+            '-o',
+            type=str,
+            help='save result in a file')
 
 
     # jalankan fungsi parse_args()
@@ -88,14 +92,24 @@ if __name__ == "__main__":
     # buat objek translator
     translator = GoogleTranslator(args.sl, args.tl)
 
+    result = ''
     if args.tx != None:
         text = ' '.join(args.tx)
-        result = translator.translate(text)
-        print(result)
+        r = translator.translate(text)
+        result += r
+        print(r)
         print('\n')
 
+    result += '\n'+'='*50+'\n'
     if args.f != None:
         for fn in args.f:
             with open(fn, 'r') as f:
-                result = translator.translate(f.read())
-                print(f'translation of {fn}\n{"="*50}\n{result}\n\n')
+                r = translator.translate(f.read())
+                result += r
+                result += '\n'+'='*50+'\n'
+                print(f'translation of {fn}\n{"="*50}\n{r}\n\n')
+
+    # save result
+    if result != '' and args.o != None:
+        with open(args.o, 'w') as f:
+            f.write(result)
