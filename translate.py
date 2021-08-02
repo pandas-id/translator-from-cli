@@ -61,12 +61,12 @@ if __name__ == "__main__":
 
     # tambahkan argumen
     parser.add_argument(
-            '-sl',
+            '-fr',
             type=str,
             help="from language [default 'id']",
             default='id')
     parser.add_argument(
-            '-tl',
+            '-to',
             type=str,
             help="to language [default 'en']",
             default='en')
@@ -94,7 +94,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # buat objek translator
-    translator = GoogleTranslator(args.sl, args.tl)
+    translator = GoogleTranslator(args.fr, args.to)
 
     result = ''
 
@@ -103,6 +103,7 @@ if __name__ == "__main__":
             text = input('>> ')
             r = translator.translate(text)
             print(r)
+        exit()
 
     if args.tx != None:
         text = ' '.join(args.tx)
