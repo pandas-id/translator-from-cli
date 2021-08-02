@@ -84,6 +84,10 @@ if __name__ == "__main__":
             '-o',
             type=str,
             help='save result in a file')
+    parser.add_argument(
+            '-shell',
+            help='access the interactive shell',
+            action='store_true')
 
 
     # jalankan fungsi parse_args()
@@ -93,12 +97,18 @@ if __name__ == "__main__":
     translator = GoogleTranslator(args.sl, args.tl)
 
     result = ''
+
+    if args.shell:
+        while True:
+            text = input('>> ')
+            r = translator.translate(text)
+            print(r)
+
     if args.tx != None:
         text = ' '.join(args.tx)
         r = translator.translate(text)
         result += r
         print(r)
-        print('\n')
 
     result += '\n'+'='*50+'\n'
     if args.f != None:
