@@ -53,6 +53,18 @@ class GoogleTranslator:
 
         return result
 
+def shell():
+    try:
+        while True:
+            text = input('>> ')
+            r = translator.translate(text)
+            print(r)
+    except KeyboardInterrupt:
+        pass
+    except EOFError:
+        pass
+    exit()
+
 if __name__ == "__main__":
     # buat objek ArgumentParser
     parser = argparse.ArgumentParser(
@@ -100,11 +112,7 @@ if __name__ == "__main__":
     result = ''
 
     if args.shell:
-        while True:
-            text = input('>> ')
-            r = translator.translate(text)
-            print(r)
-        exit()
+        shell()
 
     if args.tx != None:
         text = ' '.join(args.tx)
