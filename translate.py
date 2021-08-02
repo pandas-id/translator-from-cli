@@ -76,10 +76,11 @@ if __name__ == "__main__":
             help='text file to be translated',
             action='append')
     parser.add_argument(
-            '-tx',
+            'tx',
             type=str,
             help='text to be translated',
-            nargs='*')
+            nargs='*',
+    )
     parser.add_argument(
             '-o',
             type=str,
