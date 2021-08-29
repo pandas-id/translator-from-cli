@@ -16,7 +16,7 @@ cd translator-from-cli
 # grant access rights
 chmod +x translator.py
 # move the translator.py file to the bin folder, the path to the bin folder may be different
-cp translator.py $PREFIX/bin/trs
+cp translate.py $PREFIX/bin/trs
 ```
 
 # How to use
