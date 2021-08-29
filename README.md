@@ -21,4 +21,4 @@ cp translate.py $PREFIX/bin/trs
 
 # How to use
 
-Use the command `python translator.py -h` or `translator.py -h` for more info.
+Use the command `python translate.py -h` or `translate.py -h` for more info.
