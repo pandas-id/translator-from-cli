@@ -73,34 +73,34 @@ if __name__ == "__main__":
 
     # tambahkan argumen
     parser.add_argument(
-            '-fr',
-            type=str,
-            help="from language [default 'id']",
-            default='id')
+        '-fr',
+        type=str,
+        help="from language [default 'id']",
+        default='id')
     parser.add_argument(
-            '-to',
-            type=str,
-            help="to language [default 'en']",
-            default='en')
+        '-to',
+        type=str,
+        help="to language [default 'en']",
+        default='en')
     parser.add_argument(
-            '-f',
-            type=str,
-            help='text file to be translated',
-            action='append')
+        '-f',
+        type=str,
+        help='text file to be translated',
+        action='append')
     parser.add_argument(
-            'tx',
-            type=str,
-            help='text to be translated',
-            nargs='*',
-    )
+        'tx',
+        type=str,
+        help='text to be translated',
+        nargs='*',
+)
     parser.add_argument(
-            '-o',
-            type=str,
-            help='save result in a file')
+        '-o',
+        type=str,
+        help='save result in a file')
     parser.add_argument(
-            '-shell',
-            help='access the interactive shell',
-            action='store_true')
+        '-shell',
+        help='access the interactive shell',
+        action='store_true')
 
 
     # jalankan fungsi parse_args()
