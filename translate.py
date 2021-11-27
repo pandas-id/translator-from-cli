@@ -8,6 +8,8 @@ from urllib.parse import quote_plus
 import json
 import argparse
 
+from pprint import pprint
+
 class GoogleTranslator:
     host = 'https://translate.googleapis.com'
 
@@ -42,16 +44,16 @@ class GoogleTranslator:
 
     def translate(self, text) -> str:
         url = self.generate_url(text)
-        obj = self.http_get(url)
+        trs_api = self.http_get(url)
 
-        result = ''
-        try:
-            for x in obj[0]:
-                result += x[0]
-        except TypeError:
-            result = 'NOTE: No definite results'
+        print(trs_api[0][0][0])
+        if trs_api[1] is not None:
+            for ch in trs_api[1]:
+                print(ch[0]+': ', end='')
+                for c in ch[1]:
+                    print(c, end=', ')
+                print()
 
-        return result
 
 def shell():
     try:
@@ -117,8 +119,6 @@ if __name__ == "__main__":
     if args.tx != None:
         text = ' '.join(args.tx)
         r = translator.translate(text)
-        result += r
-        print(r)
 
     result += '\n'+'='*50+'\n'
     if args.f != None:
