@@ -46,6 +46,7 @@ class GoogleTranslator:
         url = self.generate_url(text)
         trs_api = self.http_get(url)
 
+        pprint(trs_api)
         print(trs_api[0][0][0])
         if trs_api[1] is not None:
             for ch in trs_api[1]:
